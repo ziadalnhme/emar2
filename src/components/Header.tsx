@@ -52,9 +52,6 @@ const Header = () => {
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-custom-blue transition-all duration-300 group-hover:w-full"></span>
                 </a>
               ))}
-              <button className="bg-custom-blue hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium transition-colors">
-                احصل على عرض سعر
-              </button>
             </div>
 
             {/* Mobile Menu Button */}
@@ -80,9 +77,6 @@ const Header = () => {
                     {item.label}
                   </a>
                 ))}
-                <button className="bg-custom-blue hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium transition-colors w-fit">
-                  احصل على عرض سعر
-                </button>
               </div>
             </div>
           )}
