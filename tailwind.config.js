@@ -8,7 +8,7 @@ export default {
         'custom-yellow': '#fea00c',
       },
       fontFamily: {
-        'arabic': ['Lama Sans', 'Cairo', 'sans-serif'],
+        'arabic': ['Noto Kufi Arabic', 'Cairo', 'sans-serif'],
       },
     },
   },
