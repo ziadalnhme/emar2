@@ -49,8 +49,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-1">الهاتف</h4>
-                  <p className="text-gray-600">+966 11 234 5678</p>
-                  <p className="text-gray-600">+966 50 123 4567</p>
+                  <p className="text-gray-600">+966558571233</p>
                 </div>
               </div>
 
@@ -60,8 +59,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-1">البريد الإلكتروني</h4>
-                  <p className="text-gray-600">info@nemcontracting.com</p>
-                  <p className="text-gray-600">projects@nemcontracting.com</p>
+                  <p className="text-gray-600">emaar.bun@gmail.com</p>
                 </div>
               </div>
 
@@ -72,8 +70,8 @@ const Contact = () => {
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-1">العنوان</h4>
                   <p className="text-gray-600">
-                    شارع الملك فهد، حي العليا<br />
-                    الرياض 12211، المملكة العربية السعودية
+                    جدة – حي الصفاء – أم القرى<br />
+                    المملكة العربية السعودية
                   </p>
                 </div>
               </div>

@@ -54,17 +54,17 @@ const Footer = () => {
             <div className="space-y-4">
               <div className="flex items-center space-x-3 rtl:space-x-reverse">
                 <Phone className="w-5 h-5 text-custom-yellow flex-shrink-0" />
-                <span className="text-gray-300">+966 11 234 5678</span>
+                <span className="text-gray-300">+966558571233</span>
               </div>
               <div className="flex items-center space-x-3 rtl:space-x-reverse">
                 <Mail className="w-5 h-5 text-custom-yellow flex-shrink-0" />
-                <span className="text-gray-300">info@nemcontracting.com</span>
+                <span className="text-gray-300">emaar.bun@gmail.com</span>
               </div>
               <div className="flex items-start space-x-3 rtl:space-x-reverse">
                 <MapPin className="w-5 h-5 text-custom-yellow flex-shrink-0 mt-1" />
                 <span className="text-gray-300">
-                  شارع الملك فهد، حي العليا<br />
-                  الرياض، المملكة العربية السعودية
+                  جدة – حي الصفاء – أم القرى<br />
+                  المملكة العربية السعودية
                 </span>
               </div>
             </div>
