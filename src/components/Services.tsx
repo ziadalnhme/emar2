@@ -88,21 +88,6 @@ const Services = () => {
           ))}
         </div>
 
-        {/* CTA Section */}
-        <div className="mt-16 text-center">
-          <div className="bg-gradient-to-r from-custom-blue to-blue-700 rounded-2xl p-8 text-white">
-            <h3 className="text-3xl font-bold mb-4">هل تحتاج إلى استشارة مجانية؟</h3>
-            <p className="text-blue-100 text-lg mb-6">
-              تواصل معنا الآن للحصول على استشارة مجانية وعرض سعر مخصص لمشروعك
-            </p>
-            <button 
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="bg-custom-yellow hover:bg-yellow-600 text-custom-blue px-8 py-3 rounded-lg font-bold text-lg transition-colors"
-            >
-              احصل على استشارة مجانية
-            </button>
-          </div>
-        </div>
       </div>
     </section>
   );
