@@ -25,25 +25,6 @@ const Header = () => {
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled ? 'bg-white shadow-lg' : 'bg-white/95 backdrop-blur-sm'
     }`}>
-      {/* Top Bar */}
-      <div className="bg-custom-blue text-white py-2 text-sm">
-        <div className="container mx-auto px-4 flex justify-between items-center">
-          <div className="flex items-center space-x-6 rtl:space-x-reverse">
-            <div className="flex items-center space-x-2 rtl:space-x-reverse">
-              <Phone className="w-4 h-4" />
-              <span>+966558571233</span>
-            </div>
-            <div className="flex items-center space-x-2 rtl:space-x-reverse">
-              <Mail className="w-4 h-4" />
-              <span>emaar.bun@gmail.com</span>
-            </div>
-          </div>
-          <div className="hidden md:block">
-            <span>مرحباً بكم في شركة اعمار البنيان للمقاولات</span>
-          </div>
-        </div>
-      </div>
-
       {/* Main Navigation */}
       <nav className="py-4">
         <div className="container mx-auto px-4">
