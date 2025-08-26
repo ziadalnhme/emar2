@@ -18,7 +18,7 @@ const About = () => {
             <div className="mb-8">
               <span className="text-blue-600 font-semibold text-lg mb-2 block">من نحن</span>
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                شركة نيم للمقاولات العامة والكهرباء
+                شركة اعمار البنيان للمقاولات العامة والكهرباء
               </h2>
               <p className="text-gray-600 text-lg leading-relaxed mb-6">
                 تأسست شركة نيم للمقاولات العامة والكهرباء عام 2008، وهي شركة رائدة في مجال المقاولات العامة والأعمال الكهربائية في المملكة العربية السعودية. نحن نفخر بتقديم خدمات متميزة تلبي احتياجات عملائنا وتتجاوز توقعاتهم.
