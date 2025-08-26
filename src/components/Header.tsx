@@ -38,7 +38,6 @@ const Header = () => {
                 <span className="text-white font-bold text-xl">ن</span>
               </div>
                 <p className="text-sm text-gray-600">مقاولات عامة وكهرباء</p>
-              </div>
             </div>
 
             {/* Desktop Navigation */}
