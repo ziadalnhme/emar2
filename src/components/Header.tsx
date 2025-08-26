@@ -43,6 +43,7 @@ const Header = () => {
     }
     setIsMenuOpen(false);
   };
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 p-4">
       {/* Main Navigation */}
@@ -123,48 +124,6 @@ const Header = () => {
                       {item.label}
                     </button>
                   )
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
-      </nav>
-    </header>
-  );
-};
-
-export default Header;
-                  key={item.href}
-                  onClick={() => scrollToSection(item.href)}
-                  className="text-gray-700 hover:text-custom-blue font-medium transition-colors relative group"
-                >
-                  {item.label}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-custom-blue transition-all duration-300 group-hover:w-full"></span>
-                </button>
-              ))}
-            </div>
-
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="lg:hidden p-2 text-gray-700 hover:text-custom-blue"
-            >
-              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
-          </div>
-
-          {/* Mobile Navigation */}
-          {isMenuOpen && (
-            <div className="lg:hidden mt-4 py-4 border-t border-gray-200">
-              <div className="flex flex-col space-y-4">
-                {navItems.map((item) => (
-                  <button
-                    key={item.href}
-                    onClick={() => scrollToSection(item.href)}
-                    className="text-gray-700 hover:text-custom-blue font-medium transition-colors"
-                  >
-                    {item.label}
-                  </button>
                 ))}
               </div>
             </div>
