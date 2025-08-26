@@ -1,16 +1,56 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Award, Users, Clock, Shield } from 'lucide-react';
 
 const About = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const [counts, setCounts] = useState({ projects: 0, clients: 0, years: 0, quality: 0 });
+  const sectionRef = useRef<HTMLDivElement>(null);
+
   const stats = [
-    { icon: Award, number: '200+', label: 'مشروع مكتمل' },
-    { icon: Users, number: '50+', label: 'عميل راضي' },
-    { icon: Clock, number: '15+', label: 'سنة خبرة' },
-    { icon: Shield, number: '100%', label: 'ضمان الجودة' },
+    { icon: Award, number: 200, key: 'projects', label: 'مشروع مكتمل', suffix: '+' },
+    { icon: Users, number: 50, key: 'clients', label: 'عميل راضي', suffix: '+' },
+    { icon: Clock, number: 15, key: 'years', label: 'سنة خبرة', suffix: '+' },
+    { icon: Shield, number: 100, key: 'quality', label: 'ضمان الجودة', suffix: '%' },
   ];
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !isVisible) {
+          setIsVisible(true);
+          animateNumbers();
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [isVisible]);
+
+  const animateNumbers = () => {
+    stats.forEach((stat) => {
+      let current = 0;
+      const increment = stat.number / 50;
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= stat.number) {
+          current = stat.number;
+          clearInterval(timer);
+        }
+        setCounts(prev => ({
+          ...prev,
+          [stat.key]: Math.floor(current)
+        }));
+      }, 40);
+    });
+  };
+
   return (
-    <section id="about" className="py-20 bg-gray-50">
+    <section id="about" className="py-20 bg-gray-50" ref={sectionRef}>
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
@@ -45,7 +85,10 @@ const About = () => {
             </div>
 
             {/* CTA */}
-            <button className="bg-custom-blue hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+            <button 
+              onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+              className="bg-custom-blue hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
+            >
               تعرف على خدماتنا
             </button>
           </div>
@@ -56,7 +99,9 @@ const About = () => {
               <img
                 src="https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=800"
                 alt="فريق العمل"
-                className="rounded-2xl shadow-xl w-full h-96 object-cover"
+                className={`rounded-2xl shadow-xl w-full h-96 object-cover transition-all duration-1000 ${
+                  isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-10'
+                }`}
               />
             </div>
             
@@ -64,9 +109,17 @@ const About = () => {
             <div className="absolute -bottom-8 left-4 right-4 z-20">
               <div className="grid grid-cols-2 gap-4">
                 {stats.map((stat, index) => (
-                  <div key={index} className="bg-white rounded-xl p-4 shadow-lg text-center">
+                  <div 
+                    key={index} 
+                    className={`bg-white rounded-xl p-4 shadow-lg text-center transition-all duration-700 ${
+                      isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-10'
+                    }`}
+                    style={{ transitionDelay: `${index * 200}ms` }}
+                  >
                     <stat.icon className="w-8 h-8 text-custom-blue mx-auto mb-2" />
-                    <div className="text-2xl font-bold text-gray-900">{stat.number}</div>
+                    <div className="text-2xl font-bold text-gray-900">
+                      {counts[stat.key as keyof typeof counts]}{stat.suffix}
+                    </div>
                     <div className="text-sm text-gray-600">{stat.label}</div>
                   </div>
                 ))}

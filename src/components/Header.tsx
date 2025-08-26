@@ -21,6 +21,14 @@ const Header = () => {
     { href: '#contact', label: 'اتصل بنا' },
   ];
 
+  const scrollToSection = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsMenuOpen(false);
+  };
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 p-4">
       {/* Main Navigation */}
@@ -43,14 +51,14 @@ const Header = () => {
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center space-x-8 rtl:space-x-reverse">
               {navItems.map((item) => (
-                <a
+                <button
                   key={item.href}
-                  href={item.href}
+                  onClick={() => scrollToSection(item.href)}
                   className="text-gray-700 hover:text-custom-blue font-medium transition-colors relative group"
                 >
                   {item.label}
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-custom-blue transition-all duration-300 group-hover:w-full"></span>
-                </a>
+                </button>
               ))}
             </div>
 
@@ -68,14 +76,13 @@ const Header = () => {
             <div className="lg:hidden mt-4 py-4 border-t border-gray-200">
               <div className="flex flex-col space-y-4">
                 {navItems.map((item) => (
-                  <a
+                  <button
                     key={item.href}
-                    href={item.href}
+                    onClick={() => scrollToSection(item.href)}
                     className="text-gray-700 hover:text-custom-blue font-medium transition-colors"
-                    onClick={() => setIsMenuOpen(false)}
                   >
                     {item.label}
-                  </a>
+                  </button>
                 ))}
               </div>
             </div>

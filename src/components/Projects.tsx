@@ -150,7 +150,10 @@ const Projects = () => {
 
         {/* CTA */}
         <div className="text-center mt-12">
-          <button className="bg-custom-blue hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+          <button 
+            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            className="bg-custom-blue hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
+          >
             عرض جميع المشاريع
           </button>
         </div>

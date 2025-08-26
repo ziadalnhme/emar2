@@ -95,7 +95,10 @@ const Services = () => {
             <p className="text-blue-100 text-lg mb-6">
               تواصل معنا الآن للحصول على استشارة مجانية وعرض سعر مخصص لمشروعك
             </p>
-            <button className="bg-custom-yellow hover:bg-yellow-600 text-custom-blue px-8 py-3 rounded-lg font-bold text-lg transition-colors">
+            <button 
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              className="bg-custom-yellow hover:bg-yellow-600 text-custom-blue px-8 py-3 rounded-lg font-bold text-lg transition-colors"
+            >
               احصل على استشارة مجانية
             </button>
           </div>
