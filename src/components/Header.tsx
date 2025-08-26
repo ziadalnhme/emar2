@@ -26,7 +26,6 @@ const Header = () => {
                 <h1 className="text-xl font-bold text-custom-blue">شركة اعمار البنيان</h1>
                 <p className="text-sm text-gray-600">للمقاولات العامة والكهرباء</p>
               </div>
-                <p className="text-sm text-gray-600">مقاولات عامة وكهرباء</p>
             </div>
 
             {/* Desktop Navigation */}
