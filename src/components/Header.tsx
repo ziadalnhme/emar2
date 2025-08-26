@@ -22,11 +22,11 @@ const Header = () => {
   ];
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white shadow-lg' : 'bg-white/95 backdrop-blur-sm'
-    }`}>
+    <header className="fixed top-0 left-0 right-0 z-50 p-4">
       {/* Main Navigation */}
-      <nav className="py-4">
+      <nav className={`py-4 px-6 mx-auto max-w-6xl rounded-2xl transition-all duration-300 ${
+        isScrolled ? 'bg-white shadow-2xl' : 'bg-white/95 backdrop-blur-sm shadow-lg'
+      }`}>
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center">
             {/* Logo */}
