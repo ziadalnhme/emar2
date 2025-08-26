@@ -9,9 +9,11 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-3 rtl:space-x-reverse mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-custom-blue to-blue-800 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">ن</span>
-              </div>
+              <img 
+                src="/logo-0١.svg" 
+                alt="شعار شركة اعمار البنيان" 
+                className="w-12 h-12 object-contain filter brightness-0 invert"
+              />
               <div>
                 <h3 className="text-xl font-bold">شركة اعمار البنيان للمقاولات</h3>
                 <p className="text-gray-400">مقاولات عامة وكهرباء</p>

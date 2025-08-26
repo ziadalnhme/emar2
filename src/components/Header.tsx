@@ -39,9 +39,11 @@ const Header = () => {
           <div className="flex justify-between items-center">
             {/* Logo */}
             <div className="flex items-center space-x-3 rtl:space-x-reverse">
-              <div className="w-12 h-12 bg-gradient-to-br from-custom-blue to-blue-800 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">ن</span>
-              </div>
+              <img 
+                src="/logo-0١.svg" 
+                alt="شعار شركة اعمار البنيان" 
+                className="w-12 h-12 object-contain"
+              />
               <div>
                 <h1 className="text-xl font-bold text-gray-900">شركة اعمار البنيان</h1>
                 <p className="text-sm text-gray-600">للمقاولات العامة والكهرباء</p>
