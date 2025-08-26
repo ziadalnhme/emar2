@@ -1,91 +1,114 @@
-import React from 'react';
-import { Phone, Mail, MapPin, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Menu, X, Phone, Mail } from 'lucide-react';
 
-const Footer = () => {
+const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const navItems = [
+    { href: '#home', label: 'الرئيسية' },
+    { href: '#about', label: 'من نحن' },
+    { href: '#services', label: 'خدماتنا' },
+    { href: '#projects', label: 'مشاريعنا' },
+    { href: '#contact', label: 'اتصل بنا' },
+  ];
+
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
-          {/* Company Info */}
-          <div className="lg:col-span-2">
-            <div className="flex items-center space-x-3 rtl:space-x-reverse mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
-                <img src="/logo-01.svg" alt="شعار الشركة" className="w-8 h-8" />
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold">شركة اعمار البنيان للمقاولات</h3>
-                <p className="text-gray-400">مقاولات عامة وكهرباء</p>
-              </div>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      isScrolled ? 'bg-white shadow-lg' : 'bg-white/95 backdrop-blur-sm'
+    }`}>
+      {/* Top Bar */}
+      <div className="bg-custom-blue text-white py-2 text-sm">
+        <div className="container mx-auto px-4 flex justify-between items-center">
+          <div className="flex items-center space-x-6 rtl:space-x-reverse">
+            <div className="flex items-center space-x-2 rtl:space-x-reverse">
+              <Phone className="w-4 h-4" />
+              <span>+966558571233</span>
             </div>
-            <p className="text-gray-300 leading-relaxed mb-6 max-w-md">
-              شركة رائدة في مجال المقاولات العامة والأعمال الكهربائية، نقدم خدمات متميزة بأعلى معايير الجودة والسلامة منذ عام 2008.
-            </p>
-            <div className="flex space-x-4 rtl:space-x-reverse">
-              <a href="#" className="w-10 h-10 bg-custom-blue rounded-lg flex items-center justify-center hover:bg-blue-700 transition-colors">
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a href="#" className="w-10 h-10 bg-custom-blue rounded-lg flex items-center justify-center hover:bg-blue-700 transition-colors">
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a href="#" className="w-10 h-10 bg-custom-blue rounded-lg flex items-center justify-center hover:bg-blue-700 transition-colors">
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a href="#" className="w-10 h-10 bg-custom-blue rounded-lg flex items-center justify-center hover:bg-blue-700 transition-colors">
-                <Linkedin className="w-5 h-5" />
-              </a>
+            <div className="flex items-center space-x-2 rtl:space-x-reverse">
+              <Mail className="w-4 h-4" />
+              <span>emaar.bun@gmail.com</span>
             </div>
           </div>
-
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-xl font-bold mb-6">روابط سريعة</h4>
-            <ul className="space-y-3">
-              <li><a href="#home" className="text-gray-300 hover:text-white transition-colors">الرئيسية</a></li>
-              <li><a href="#about" className="text-gray-300 hover:text-white transition-colors">من نحن</a></li>
-              <li><a href="#services" className="text-gray-300 hover:text-white transition-colors">خدماتنا</a></li>
-              <li><a href="#projects" className="text-gray-300 hover:text-white transition-colors">مشاريعنا</a></li>
-              <li><a href="#contact" className="text-gray-300 hover:text-white transition-colors">اتصل بنا</a></li>
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div>
-            <h4 className="text-xl font-bold mb-6">معلومات التواصل</h4>
-            <div className="space-y-4">
-              <div className="flex items-center space-x-3 rtl:space-x-reverse">
-                <Phone className="w-5 h-5 text-custom-yellow flex-shrink-0" />
-                <span className="text-gray-300">+966558571233</span>
-              </div>
-              <div className="flex items-center space-x-3 rtl:space-x-reverse">
-                <Mail className="w-5 h-5 text-custom-yellow flex-shrink-0" />
-                <span className="text-gray-300">emaar.bun@gmail.com</span>
-              </div>
-              <div className="flex items-start space-x-3 rtl:space-x-reverse">
-                <MapPin className="w-5 h-5 text-custom-yellow flex-shrink-0 mt-1" />
-                <span className="text-gray-300">
-                  جدة – حي الصفاء – أم القرى<br />
-                  المملكة العربية السعودية
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Bottom Bar */}
-        <div className="border-t border-gray-800 mt-12 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-center md:text-right">
-              © 2024 شركة اعمار البنيان للمقاولات العامة والكهرباء. جميع الحقوق محفوظة.
-            </p>
-            <div className="flex space-x-6 rtl:space-x-reverse mt-4 md:mt-0">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">سياسة الخصوصية</a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">الشروط والأحكام</a>
-            </div>
+          <div className="hidden md:block">
+            <span>مرحباً بكم في شركة اعمار البنيان للمقاولات</span>
           </div>
         </div>
       </div>
-    </footer>
+
+      {/* Main Navigation */}
+      <nav className="py-4">
+        <div className="container mx-auto px-4">
+          <div className="flex justify-between items-center">
+            {/* Logo */}
+            <div className="flex items-center space-x-3 rtl:space-x-reverse">
+              <div className="w-12 h-12 bg-gradient-to-br from-custom-blue to-blue-800 rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-xl">ن</span>
+              </div>
+              <div>
+                <h1 className="text-xl font-bold text-gray-900">شركة اعمار البنيان</h1>
+                <p className="text-sm text-gray-600">للمقاولات العامة والكهرباء</p>
+              </div>
+            </div>
+
+            {/* Desktop Navigation */}
+            <div className="hidden lg:flex items-center space-x-8 rtl:space-x-reverse">
+              {navItems.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className="text-gray-700 hover:text-custom-blue font-medium transition-colors relative group"
+                >
+                  {item.label}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-custom-blue transition-all duration-300 group-hover:w-full"></span>
+                </a>
+              ))}
+              <button className="bg-custom-blue hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium transition-colors">
+                احصل على عرض سعر
+              </button>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="lg:hidden p-2 text-gray-700 hover:text-custom-blue"
+            >
+              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
+
+          {/* Mobile Navigation */}
+          {isMenuOpen && (
+            <div className="lg:hidden mt-4 py-4 border-t border-gray-200">
+              <div className="flex flex-col space-y-4">
+                {navItems.map((item) => (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    className="text-gray-700 hover:text-custom-blue font-medium transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.label}
+                  </a>
+                ))}
+                <button className="bg-custom-blue hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium transition-colors w-fit">
+                  احصل على عرض سعر
+                </button>
+              </div>
+            </div>
+          )}
+        </div>
+      </nav>
+    </header>
   );
 };
 
-export default Footer;
+export default Header;

@@ -7,10 +7,6 @@ export default {
         'custom-blue': '#0c5577',
         'custom-yellow': '#fea00c',
       },
-      fontFamily: {
-        'sans': ['Noto Kufi Arabic', 'Cairo', 'sans-serif'],
-        'arabic': ['Noto Kufi Arabic', 'Cairo', 'sans-serif'],
-      },
     },
   },
   plugins: [],
