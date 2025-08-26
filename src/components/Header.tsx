@@ -5,31 +5,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <>
-      {/* Top Bar */}
-      <div className="bg-gradient-to-r from-custom-blue to-custom-blue/90 text-white py-2">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-wrap justify-between items-center text-sm">
-            <div className="flex items-center space-x-6 rtl:space-x-reverse">
-              <div className="flex items-center space-x-2 rtl:space-x-reverse">
-                <Phone className="w-4 h-4" />
-                <span>+966 11 234 5678</span>
-              </div>
-              <div className="flex items-center space-x-2 rtl:space-x-reverse">
-                <Mail className="w-4 h-4" />
-                <span>info@nemcontracting.com</span>
-              </div>
-            </div>
-            <div className="flex items-center space-x-2 rtl:space-x-reverse">
-              <MapPin className="w-4 h-4" />
-              <span>الرياض، المملكة العربية السعودية</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Main Header */}
-      <header className="bg-white shadow-lg sticky top-0 z-50">
+    <header className="bg-white shadow-lg sticky top-0 z-50">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center py-4">
             {/* Logo */}
@@ -72,7 +48,6 @@ const Header = () => {
           )}
         </div>
       </header>
-    </>
   );
 };
 
