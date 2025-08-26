@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Linkedin, Instagram, Twitter, Facebook } from 'lucide-react';
 
 const Footer = () => {
@@ -42,12 +43,12 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-6">روابط سريعة</h4>
             <ul className="space-y-3">
-              <li><a href="#home" className="text-gray-300 hover:text-white transition-colors">الرئيسية</a></li>
-              <li><a href="#about" className="text-gray-300 hover:text-white transition-colors">من نحن</a></li>
-              <li><a href="#services" className="text-gray-300 hover:text-white transition-colors">خدماتنا</a></li>
-              <li><a href="#certificates" className="text-gray-300 hover:text-white transition-colors">الشهادات</a></li>
-              <li><a href="#projects" className="text-gray-300 hover:text-white transition-colors">مشاريعنا</a></li>
-              <li><a href="#contact" className="text-gray-300 hover:text-white transition-colors">اتصل بنا</a></li>
+              <li><Link to="/" className="text-gray-300 hover:text-white transition-colors">الرئيسية</Link></li>
+              <li><a href="/#about" className="text-gray-300 hover:text-white transition-colors">من نحن</a></li>
+              <li><a href="/#services" className="text-gray-300 hover:text-white transition-colors">خدماتنا</a></li>
+              <li><Link to="/certificates" className="text-gray-300 hover:text-white transition-colors">الشهادات</Link></li>
+              <li><a href="/#projects" className="text-gray-300 hover:text-white transition-colors">مشاريعنا</a></li>
+              <li><a href="/#contact" className="text-gray-300 hover:text-white transition-colors">اتصل بنا</a></li>
             </ul>
           </div>
 
