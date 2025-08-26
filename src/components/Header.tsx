@@ -20,7 +20,7 @@ const Header = () => {
             {/* Logo */}
             <div className="flex items-center space-x-3 rtl:space-x-reverse">
               <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">ن</span>
+                <img src="/logo nem-0١.svg" alt="شعار الشركة" className="w-8 h-8" />
               </div>
               <div>
                 <h1 className="text-xl font-bold text-custom-blue">شركة اعمار البنيان</h1>
