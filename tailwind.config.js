@@ -8,6 +8,7 @@ export default {
         'custom-yellow': '#fea00c',
       },
       fontFamily: {
+        'sans': ['Noto Kufi Arabic', 'Cairo', 'sans-serif'],
         'arabic': ['Noto Kufi Arabic', 'Cairo', 'sans-serif'],
       },
     },
