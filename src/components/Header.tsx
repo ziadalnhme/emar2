@@ -1,67 +1,91 @@
-import React, { useState } from 'react';
-import { Menu, X, Phone, Mail, MapPin } from 'lucide-react';
+import React from 'react';
+import { Phone, Mail, MapPin, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 
-const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-    setIsMenuOpen(false);
-  };
-
+const Footer = () => {
   return (
-    <header className="fixed top-4 left-4 right-4 z-50">
-      <div className="bg-white/95 backdrop-blur-md shadow-2xl rounded-2xl border border-gray-100">
-        <div className="container mx-auto px-6">
-          <div className="flex justify-between items-center py-4">
-            {/* Logo */}
-            <div className="flex items-center space-x-3 rtl:space-x-reverse">
+    <footer className="bg-gray-900 text-white">
+      <div className="container mx-auto px-4 py-16">
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
+          {/* Company Info */}
+          <div className="lg:col-span-2">
+            <div className="flex items-center space-x-3 rtl:space-x-reverse mb-6">
               <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
                 <img src="/logo-01.svg" alt="شعار الشركة" className="w-8 h-8" />
               </div>
               <div>
-                <h1 className="text-xl font-bold text-custom-blue">شركة اعمار البنيان</h1>
-                <p className="text-sm text-gray-600">للمقاولات العامة والكهرباء</p>
+                <h3 className="text-2xl font-bold">شركة اعمار البنيان للمقاولات</h3>
+                <p className="text-gray-400">مقاولات عامة وكهرباء</p>
               </div>
             </div>
-
-            {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-8 rtl:space-x-reverse">
-              <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-custom-blue font-medium transition-colors">الرئيسية</button>
-              <button onClick={() => scrollToSection('about')} className="text-gray-700 hover:text-custom-blue font-medium transition-colors">من نحن</button>
-              <button onClick={() => scrollToSection('services')} className="text-gray-700 hover:text-custom-blue font-medium transition-colors">خدماتنا</button>
-              <button onClick={() => scrollToSection('projects')} className="text-gray-700 hover:text-custom-blue font-medium transition-colors">مشاريعنا</button>
-              <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-custom-blue font-medium transition-colors">اتصل بنا</button>
-            </nav>
-
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="lg:hidden p-2 rounded-md text-gray-700 hover:text-custom-blue hover:bg-gray-100"
-            >
-              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
+            <p className="text-gray-300 leading-relaxed mb-6 max-w-md">
+              شركة رائدة في مجال المقاولات العامة والأعمال الكهربائية، نقدم خدمات متميزة بأعلى معايير الجودة والسلامة منذ عام 2008.
+            </p>
+            <div className="flex space-x-4 rtl:space-x-reverse">
+              <a href="#" className="w-10 h-10 bg-custom-blue rounded-lg flex items-center justify-center hover:bg-blue-700 transition-colors">
+                <Facebook className="w-5 h-5" />
+              </a>
+              <a href="#" className="w-10 h-10 bg-custom-blue rounded-lg flex items-center justify-center hover:bg-blue-700 transition-colors">
+                <Twitter className="w-5 h-5" />
+              </a>
+              <a href="#" className="w-10 h-10 bg-custom-blue rounded-lg flex items-center justify-center hover:bg-blue-700 transition-colors">
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a href="#" className="w-10 h-10 bg-custom-blue rounded-lg flex items-center justify-center hover:bg-blue-700 transition-colors">
+                <Linkedin className="w-5 h-5" />
+              </a>
+            </div>
           </div>
 
-          {/* Mobile Navigation */}
-          {isMenuOpen && (
-            <div className="lg:hidden py-4 border-t border-gray-100">
-              <nav className="flex flex-col space-y-4">
-                <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-custom-blue font-medium transition-colors text-right">الرئيسية</button>
-                <button onClick={() => scrollToSection('about')} className="text-gray-700 hover:text-custom-blue font-medium transition-colors text-right">من نحن</button>
-                <button onClick={() => scrollToSection('services')} className="text-gray-700 hover:text-custom-blue font-medium transition-colors text-right">خدماتنا</button>
-                <button onClick={() => scrollToSection('projects')} className="text-gray-700 hover:text-custom-blue font-medium transition-colors text-right">مشاريعنا</button>
-                <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-custom-blue font-medium transition-colors text-right">اتصل بنا</button>
-              </nav>
+          {/* Quick Links */}
+          <div>
+            <h4 className="text-xl font-bold mb-6">روابط سريعة</h4>
+            <ul className="space-y-3">
+              <li><a href="#home" className="text-gray-300 hover:text-white transition-colors">الرئيسية</a></li>
+              <li><a href="#about" className="text-gray-300 hover:text-white transition-colors">من نحن</a></li>
+              <li><a href="#services" className="text-gray-300 hover:text-white transition-colors">خدماتنا</a></li>
+              <li><a href="#projects" className="text-gray-300 hover:text-white transition-colors">مشاريعنا</a></li>
+              <li><a href="#contact" className="text-gray-300 hover:text-white transition-colors">اتصل بنا</a></li>
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div>
+            <h4 className="text-xl font-bold mb-6">معلومات التواصل</h4>
+            <div className="space-y-4">
+              <div className="flex items-center space-x-3 rtl:space-x-reverse">
+                <Phone className="w-5 h-5 text-custom-yellow flex-shrink-0" />
+                <span className="text-gray-300">+966558571233</span>
+              </div>
+              <div className="flex items-center space-x-3 rtl:space-x-reverse">
+                <Mail className="w-5 h-5 text-custom-yellow flex-shrink-0" />
+                <span className="text-gray-300">emaar.bun@gmail.com</span>
+              </div>
+              <div className="flex items-start space-x-3 rtl:space-x-reverse">
+                <MapPin className="w-5 h-5 text-custom-yellow flex-shrink-0 mt-1" />
+                <span className="text-gray-300">
+                  جدة – حي الصفاء – أم القرى<br />
+                  المملكة العربية السعودية
+                </span>
+              </div>
             </div>
-          )}
+          </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="border-t border-gray-800 mt-12 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <p className="text-gray-400 text-center md:text-right">
+              © 2024 شركة اعمار البنيان للمقاولات العامة والكهرباء. جميع الحقوق محفوظة.
+            </p>
+            <div className="flex space-x-6 rtl:space-x-reverse mt-4 md:mt-0">
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">سياسة الخصوصية</a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">الشروط والأحكام</a>
+            </div>
+          </div>
         </div>
       </div>
-      </header>
+    </footer>
   );
 };
 
-export default Header;
+export default Footer;
