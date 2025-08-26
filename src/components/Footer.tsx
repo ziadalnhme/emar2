@@ -12,8 +12,6 @@ const Footer = () => {
               <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
                 <img src="/logo-01.svg" alt="شعار الشركة" className="w-8 h-8" />
               </div>
-                <img src="/logo-01.svg" alt="شعار الشركة" className="w-8 h-8" />
-              </div>
               <div>
                 <h3 className="text-2xl font-bold">شركة اعمار البنيان للمقاولات</h3>
                 <p className="text-gray-400">مقاولات عامة وكهرباء</p>
