@@ -8,7 +8,7 @@ export default {
         'custom-yellow': '#fea00c',
       },
       fontFamily: {
-        'arabic': ['TheSansArabicBold', 'Cairo', 'sans-serif'],
+        'arabic': ['Lama Sans', 'Cairo', 'sans-serif'],
       },
     },
   },
