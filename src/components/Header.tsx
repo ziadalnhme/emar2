@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <>
       {/* Top Bar */}
-      <div className="bg-gradient-to-r from-blue-900 to-blue-800 text-white py-2">
+      <div className="bg-gradient-to-r from-custom-blue to-custom-blue/90 text-white py-2">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap justify-between items-center text-sm">
             <div className="flex items-center space-x-6 rtl:space-x-reverse">
@@ -37,8 +37,6 @@ const Header = () => {
               <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-xl">ن</span>
               </div>
-              <div>
-                <h1 className="text-2xl font-bold text-blue-900">شركة نيم للمقاولات</h1>
                 <p className="text-sm text-gray-600">مقاولات عامة وكهرباء</p>
               </div>
             </div>

@@ -77,7 +77,7 @@ const Projects = () => {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="text-blue-600 font-semibold text-lg mb-2 block">مشاريعنا</span>
+          <span className="text-custom-blue font-semibold text-lg mb-2 block">مشاريعنا</span>
           <h2 className="text-4xl font-bold text-gray-900 mb-6">
             نفخر بإنجازاتنا المتميزة
           </h2>
@@ -94,8 +94,8 @@ const Projects = () => {
               onClick={() => setActiveFilter(filter.id)}
               className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
                 activeFilter === filter.id
-                  ? 'bg-blue-600 text-white shadow-lg'
-                  : 'bg-white text-gray-700 hover:bg-blue-50 hover:text-blue-600'
+                  ? 'bg-custom-blue text-white shadow-lg'
+                  : 'bg-white text-gray-700 hover:bg-blue-50 hover:text-custom-blue'
               }`}
             >
               {filter.label}
@@ -115,18 +115,18 @@ const Projects = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="absolute top-4 right-4">
-                  <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                  <span className="bg-custom-blue text-white px-3 py-1 rounded-full text-sm font-semibold">
                     {project.category === 'residential' ? 'سكني' : 
                      project.category === 'commercial' ? 'تجاري' : 'صناعي'}
                   </span>
                 </div>
-                <button className="absolute bottom-4 right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-blue-600 hover:text-white">
+                <button className="absolute bottom-4 right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-custom-blue hover:text-white">
                   <ExternalLink className="w-5 h-5" />
                 </button>
               </div>
 
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-custom-blue transition-colors">
                   {project.title}
                 </h3>
                 <p className="text-gray-600 mb-4 leading-relaxed">
@@ -150,7 +150,7 @@ const Projects = () => {
 
         {/* CTA */}
         <div className="text-center mt-12">
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+          <button className="bg-custom-blue hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
             عرض جميع المشاريع
           </button>
         </div>

@@ -21,12 +21,12 @@ const Hero = () => {
               </span>
               <h1 className="text-5xl lg:text-6xl font-bold leading-tight mb-6">
                 نبني
-                <span className="text-yellow-400"> المستقبل</span>
+                <span className="text-custom-yellow"> المستقبل</span>
                 <br />
                 بأيدي خبيرة
               </h1>
               <p className="text-xl text-blue-100 leading-relaxed mb-8">
-                شركة نيم للمقاولات العامة والكهرباء - خبرة تمتد لأكثر من 15 عاماً في تنفيذ المشاريع السكنية والتجارية والصناعية بأعلى معايير الجودة والسلامة
+                شركة اعمار البنيان للمقاولات العامة والكهرباء - خبرة تمتد لأكثر من 15 عاماً في تنفيذ المشاريع السكنية والتجارية والصناعية بأعلى معايير الجودة والسلامة
               </p>
             </div>
 
@@ -52,7 +52,7 @@ const Hero = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+              <button className="bg-custom-yellow hover:bg-yellow-600 text-custom-blue px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
                 احصل على عرض سعر
               </button>
               <button className="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 flex items-center justify-center space-x-2 rtl:space-x-reverse">
@@ -79,16 +79,16 @@ const Hero = () => {
                 </div>
               </div>
               
-              <div className="absolute -bottom-6 -left-6 bg-yellow-500 rounded-xl p-4 shadow-xl">
+              <div className="absolute -bottom-6 -left-6 bg-custom-yellow rounded-xl p-4 shadow-xl">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-blue-900">15+</div>
-                  <div className="text-sm text-blue-900">سنة خبرة</div>
+                  <div className="text-2xl font-bold text-custom-blue">15+</div>
+                  <div className="text-sm text-custom-blue">سنة خبرة</div>
                 </div>
               </div>
             </div>
             
             {/* Background Decoration */}
-            <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/20 to-blue-600/20 rounded-2xl transform rotate-6 scale-105 -z-10"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-custom-yellow/20 to-custom-blue/20 rounded-2xl transform rotate-6 scale-105 -z-10"></div>
           </div>
         </div>
       </div>

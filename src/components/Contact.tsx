@@ -28,7 +28,7 @@ const Contact = () => {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="text-blue-600 font-semibold text-lg mb-2 block">تواصل معنا</span>
+          <span className="text-custom-blue font-semibold text-lg mb-2 block">تواصل معنا</span>
           <h2 className="text-4xl font-bold text-gray-900 mb-6">
             نحن هنا لخدمتك
           </h2>
@@ -45,7 +45,7 @@ const Contact = () => {
             <div className="space-y-6">
               <div className="flex items-start space-x-4 rtl:space-x-reverse">
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Phone className="w-6 h-6 text-blue-600" />
+                  <Phone className="w-6 h-6 text-custom-blue" />
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-1">الهاتف</h4>
@@ -56,7 +56,7 @@ const Contact = () => {
 
               <div className="flex items-start space-x-4 rtl:space-x-reverse">
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Mail className="w-6 h-6 text-blue-600" />
+                  <Mail className="w-6 h-6 text-custom-blue" />
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-1">البريد الإلكتروني</h4>
@@ -67,7 +67,7 @@ const Contact = () => {
 
               <div className="flex items-start space-x-4 rtl:space-x-reverse">
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <MapPin className="w-6 h-6 text-blue-600" />
+                  <MapPin className="w-6 h-6 text-custom-blue" />
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-1">العنوان</h4>
@@ -80,7 +80,7 @@ const Contact = () => {
 
               <div className="flex items-start space-x-4 rtl:space-x-reverse">
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Clock className="w-6 h-6 text-blue-600" />
+                  <Clock className="w-6 h-6 text-custom-blue" />
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-1">ساعات العمل</h4>
@@ -112,7 +112,7 @@ const Contact = () => {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-custom-blue focus:border-transparent"
                       required
                     />
                   </div>
@@ -123,7 +123,7 @@ const Contact = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-custom-blue focus:border-transparent"
                       required
                     />
                   </div>
@@ -136,7 +136,7 @@ const Contact = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-custom-blue focus:border-transparent"
                     required
                   />
                 </div>
@@ -147,7 +147,7 @@ const Contact = () => {
                     name="service"
                     value={formData.service}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-custom-blue focus:border-transparent"
                     required
                   >
                     <option value="">اختر نوع الخدمة</option>
@@ -167,7 +167,7 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                     rows={5}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-custom-blue focus:border-transparent resize-none"
                     placeholder="اكتب رسالتك هنا..."
                     required
                   ></textarea>
@@ -175,7 +175,7 @@ const Contact = () => {
 
                 <button
                   type="submit"
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors flex items-center justify-center space-x-2 rtl:space-x-reverse"
+                  className="w-full bg-custom-blue hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors flex items-center justify-center space-x-2 rtl:space-x-reverse"
                 >
                   <Send className="w-5 h-5" />
                   <span>إرسال الرسالة</span>

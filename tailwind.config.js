@@ -2,7 +2,15 @@
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'custom-blue': '#0c5577',
+        'custom-yellow': '#fea00c',
+      },
+      fontFamily: {
+        'arabic': ['HONOR Sans Arabic', 'Cairo', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 };
