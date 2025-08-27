@@ -5,13 +5,13 @@ const Certificates = () => {
   const certificates = [
     {
       id: 1,
-      title: 'شهادة الجودة ISO 9001:2015',
-      issuer: 'المنظمة الدولية للمعايير',
-      date: '2023',
+      title: 'شهادة تسجيل الشركة',
+      issuer: 'وزارة التجارة',
+      date: '2025 - 1445',
       type: 'quality',
-      description: 'شهادة نظام إدارة الجودة المعترف بها دولياً',
+      description: 'شهادة تسجيل الشركة',
       icon: Award,
-      image: 'https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=400'
+      image: 'https://i.postimg.cc/MGw1prKT/1-0.jpg'
     },
     {
       id: 2,
