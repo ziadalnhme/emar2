@@ -1,15 +1,21 @@
 import React from 'react';
 import { Building, Zap, Wrench, Home, Factory, Cog } from 'lucide-react';
+import { useServices } from '../hooks/useServices';
 
 const Services = () => {
-  const services = [
+  const { services: dbServices, loading, error } = useServices();
+
+  // البيانات الافتراضية
+  const defaultServices = [
     {
+      id: '1',
       icon: Building,
       title: 'الأعمال الإنشائية',
       description: 'تنفيذ جميع أنواع الأعمال الإنشائية بأعلى معايير الجودة والسلامة',
       features: ['الأعمال الخرسانية', 'الهياكل الإنشائية', 'الأساسات', 'الأعمال المدنية']
     },
     {
+      id: '2',
       icon: Factory,
       title: 'الهياكل المعدنية',
       description: 'تصميم وتنفيذ الهياكل المعدنية للمشاريع الصناعية والتجارية',
@@ -41,6 +47,25 @@ const Services = () => {
     }
   ];
 
+  // استخدام البيانات من قاعدة البيانات أو البيانات الافتراضية
+  const services = dbServices.length > 0 ? dbServices.map(service => ({
+    ...service,
+    icon: getIconComponent(service.icon),
+    features: service.features || []
+  })) : defaultServices;
+
+  function getIconComponent(iconName: string) {
+    const icons: { [key: string]: any } = {
+      building: Building,
+      factory: Factory,
+      home: Home,
+      wrench: Wrench,
+      cog: Cog,
+      zap: Zap
+    };
+    return icons[iconName] || Building;
+  }
+
   return (
     <section id="services" className="py-20 bg-white">
       <div className="container mx-auto px-4">
@@ -56,9 +81,21 @@ const Services = () => {
         </div>
 
         {/* Services Grid */}
+        {loading ? (
+          <div className="text-center py-12">
+            <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-custom-blue"></div>
+            <p className="mt-2 text-gray-600">جاري تحميل الخدمات...</p>
+          </div>
+        ) : error ? (
+          <div className="text-center py-12">
+            <p className="text-red-600 mb-4">{error}</p>
+            <p className="text-gray-600">سيتم عرض الخدمات الافتراضية</p>
+          </div>
+        ) : null}
+        
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <div key={index} className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-blue-200">
+            <div key={service.id || index} className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-blue-200">
               <div className="mb-6">
                 <div className="w-16 h-16 bg-gradient-to-br from-custom-blue to-blue-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                   <service.icon className="w-8 h-8 text-white" />
@@ -68,12 +105,12 @@ const Services = () => {
               </div>
 
               <ul className="space-y-2">
-                {service.features.map((feature, featureIndex) => (
+                {service.features?.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-center text-gray-600">
                     <div className="w-2 h-2 bg-custom-blue rounded-full mr-3 flex-shrink-0"></div>
                     {feature}
                   </li>
-                ))}
+                )) || null}
               </ul>
 
               <div className="mt-6 pt-6 border-t border-gray-100">

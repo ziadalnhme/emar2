@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { ExternalLink, Calendar, MapPin } from 'lucide-react';
+import { useProjects } from '../hooks/useProjects';
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('all');
+  const { projects: dbProjects, loading, error } = useProjects();
 
-  const projects = [
+  // البيانات الافتراضية في حالة عدم وجود بيانات في قاعدة البيانات
+  const defaultProjects = [
     {
       id: 1,
       title: 'مجمع الأمير السكني',
@@ -61,6 +64,12 @@ const Projects = () => {
     }
   ];
 
+  // استخدام البيانات من قاعدة البيانات أو البيانات الافتراضية
+  const projects = dbProjects.length > 0 ? dbProjects.map(project => ({
+    ...project,
+    image: project.image_url || 'https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=800'
+  })) : defaultProjects;
+
   const filters = [
     { id: 'all', label: 'جميع المشاريع' },
     { id: 'residential', label: 'سكني' },
@@ -104,12 +113,24 @@ const Projects = () => {
         </div>
 
         {/* Projects Grid */}
+        {loading ? (
+          <div className="text-center py-12">
+            <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-custom-blue"></div>
+            <p className="mt-2 text-gray-600">جاري تحميل المشاريع...</p>
+          </div>
+        ) : error ? (
+          <div className="text-center py-12">
+            <p className="text-red-600 mb-4">{error}</p>
+            <p className="text-gray-600">سيتم عرض المشاريع الافتراضية</p>
+          </div>
+        ) : null}
+        
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project) => (
             <div key={project.id} className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
               <div className="relative overflow-hidden">
                 <img
-                  src={project.image}
+                  src={project.image || project.image_url || 'https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=800'}
                   alt={project.title}
                   className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
                 />
